@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>云道首页</title>
+</head>
+<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	body {
+		background-color: #fafafa;
+	}
+
+	li {
+		list-style: none;
+	}
+
+	.header {
+		background-color: #ffff;
+		height: 100px;
+	}
+
+	.header .inner {
+		width: 1200px;
+		height: 100px;
+		margin: 0 auto;
+		line-height: 100px;
+	}
+
+	.inner .logo {
+		float: left;
+	}
+
+	.inner .nav {
+		float: right;
+	}
+
+	.nav ul li {
+		float: left;
+		margin-left:43px;
+		font-family: MicrosoftYaHei;
+		font-size: 13.5px; 
+	}
+
+	.nav ul li a {
+		text-decoration: none;
+		color: #333
+	}
+
+	.nav ul li a:hover {
+		color: #2288f6
+	}
+
+	.banner {
+		height: 620px;
+		background: url('./images/banner.gif') no-repeat top center;
+	}
+
+	.service {
+		width: 1055px;
+		margin: 75px auto 0;
+	}
+
+	.service-hd {
+		border-top: 1px solid #ccc;
+		margin: 0 25px;
+	}
+
+	.service-hd h3 {
+		width: 167px;
+		height: 46px;
+		margin: -23px auto 23px;
+	}
+
+	.service-hd p {
+		font-size: 14px;
+		color: #666;
+		line-height: 26px;
+		text-align: center;
+		width: 830px;
+		margin: 0 auto;
+	}
+
+	.service-bd{
+		margin-top:40px;  
+		overflow: hidden;
+	}
+
+	.service-bd ul li {
+		height: 510px;
+		width: 304px;
+		float: left;
+		background-color: #ffffff;
+		border: 1px solid #fafafa
+	}
+
+	.service-bd img {
+		margin: 40px 35px
+	}
+
+	.service-bd h3 {
+		font-size: 18px;
+		text-align: center;
+		font-weight: normal;
+		height: 40px;
+	}
+
+	.service-bd p {
+		font-size: 12px;
+		color: #666;
+		width: 235px;
+		margin: 0 auto;
+		line-height: 26px;
+	}
+
+	.service-bd li a {
+		display: block;
+		width: 148px;
+		height: 38px;
+		border: 1px solid #ff9412;
+		text-decoration: none;
+		text-align: center;
+		line-height: 38px;
+		margin: 30px auto 0;
+		color: #ff4912;
+		font-size: 12px;
+		border-radius:5px; 
+	}
+
+	.service-bd li a:hover {
+		color: #fff;
+		background-color: #ff9412;
+	}
+
+	.yingxiao {
+		margin: 0 45px
+	}
+
+	.case {
+		width: 1055px;
+		margin: 105px auto 0;
+	}
+
+	.case-bd {
+		margin-top:80px; 
+		position: relative;
+		/*overflow: hidden;*/
+		height: 210px;
+
+	}
+
+	.case-bd li {
+		width: 325px;
+		height: 210px;
+		float: left;
+		position: relative;
+	}
+
+	.case-bd-m {
+		margin: 0 40px;
+	}
+	
+	.text {
+		height: 45px;
+		width: 100%;
+		background: rgba(0,0,0,0.4);
+		position: absolute;
+		left: 0;
+		bottom:0;
+		text-align: center;
+		line-height:45px;
+		color: #fff;
+		font-size: 12px;
+	}
+
+	.mask {
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,0.5) url('./images/fdj.png') no-repeat center;
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: none;
+	}
+
+	.case-bd li:hover .mask {
+		display: block;
+	}
+
+	.left, .right {
+	    width: 60px;
+	    height: 60px;
+	    background: rgba(0,0,0,.2);
+	    position: absolute;
+	    top: 50%;
+	    margin-top: -30px;
+	    text-align: center;
+	    line-height: 60px;
+	    color: #fff;
+	    text-decoration: none;
+	    font-size: 25px;
+	    border-radius: 50%;
+	}
+	.left {
+	    left: -90px;
+	}
+	.right {
+	    right: -90px;
+	}
+
+
+	.clearfix:after {  
+		content: " "; 
+		display: block; 
+		height: 0; 
+		clear: both; 
+		visibility: hidden;  
+	}  
+
+
+	.media {
+		width: 1048px;
+		height: 240px;
+		overflow: hidden;
+		margin-top: 40px;
+	}
+
+	.media ul {
+		width: 1060px;
+	}
+
+	.media li {
+		width: 210px;
+		height: 60px;
+		float: left;
+		border-right:1px solid #ccc; 
+		border-bottom: 1px solid #ccc;
+		text-align: center;
+		padding-top: 20px;
+	}
+
+	.footer {
+		height: 165px;
+		background-color: #212425;
+		margin-top: 100px; 
+		overflow: hidden;
+	}
+
+	.footer p {
+		text-align: center;
+		color: #f0f1f1;
+		font-size: 14px;
+		margin-top:30px; 
+	}
+
+	.subnav {
+		text-align: center;
+		margin-top: 50px;
+		color: #f0f1f1;
+		font-size: 14px;
+	}
+
+	.subnav a {
+		text-decoration: none;
+		color: #f0f1f1;
+		padding: 0 5px;
+		font-size: 14px;
+	}
+
+	.subnav a:hover {
+		text-decoration: underline;
+		color: #2288f6;
+	}
+</style>
+<body>
+	<div class="header">
+		<div class="inner">
+			<div class="logo">
+				<a href="http://www.baidu.com">
+					<img src="./images/logo.png">
+				</a>
+			</div>
+			<div class="nav">
+				<ul>
+					<li><a href="#">首页</a></li>
+					<li><a href="#">云云商城</a></li>
+					<li><a href="#">智慧门店</a></li>
+					<li><a href="#">营销平台</a></li>
+					<li><a href="#">媒体联盟</a></li>
+					<li><a href="#">关于云道</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="banner">
+		
+	</div>
+
+	<!--服务模块-->
+	<div class="service">
+		<div class="service-hd">
+			<h3>
+				<img src="./images/ser_05.png">
+			</h3>
+			<p>
+				shopcmd云道，国内领先的独立电商解决方案及全渠道营销平台。完整的产品体系，简约的系统，个性化前端，全覆盖多渠道营销体系.
+				shopcmd云道，国内领先的独立电商解决方案及全渠道营销平台。完整的产品体系，简约的系统.
+			</p>
+		</div>
+		<div class="service-bd">
+			<ul>
+				<li>
+					<img src="./images/icon1.png">
+					<h3>我是卖家</h3>
+					<p>
+						shopcmd云电商解决方案，我们不仅仅是领先的独立商城建站系统。我们
+						从互联网时代品牌建设和品牌营销的全
+						新视角，赋予了品牌商城及独立电商更
+						大的生存空间和存在价值！
+					</p>
+					<a href="#">我要建站</a>
+				</li>
+				<li class="yingxiao">
+					<img src="./images/icon2.gif">
+					<h3>我是卖家</h3>
+					<p>
+						shopcmd云电商解决方案，我们不仅仅是领先的独立商城建站系统。我们
+						从互联网时代品牌建设和品牌营销的全
+						新视角，赋予了品牌商城及独立电商更
+						大的生存空间和存在价值！
+					</p>
+					<a href="#">我要营销</a>
+				</li>
+				<li>
+					<img src="./images/icon3.png">
+					<h3>媒体合作</h3>
+					<p>
+						shopcmd云电商解决方案，我们不仅仅是领先的独立商城建站系统。我们
+						从互联网时代品牌建设和品牌营销的全
+						新视角，赋予了品牌商城及独立电商更
+						大的生存空间和存在价值！
+					</p>
+					<a href="#">我要建站</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="case">
+		<div class="service-hd">
+			<h3>
+				<img src="./images/case.png">
+			</h3>
+		</div>
+		<div class="case-bd clearfix">
+			<ul class="clearfix">
+				<li>
+					<a href="">
+						<img src="./images/pro.png">
+					</a>
+					<div class="text">帮助中小企业使用电子商务</div>
+					<div class="mask"></div>
+				</li>
+				<li class="case-bd-m">
+					<a href="">
+						<img src="./images/pro.png">
+					</a>
+					<div class="text">帮助中小企业使用电子商务</div>
+					<div class="mask"></div>
+				</li>
+				<li>
+					<a href="">
+						<img src="./images/pro.png">
+					</a>
+					<div class="text">帮助中小企业使用电子商务</div>
+					<div class="mask"></div>
+				</li>
+			</ul>
+			<a href="" class="left"><</a>
+			<a href="" class="right">></a>
+		</div>
+	</div>
+
+	<div class="case">
+		<div class="service-hd">
+			<h3>
+				<img src="./images/case.png">
+			</h3>
+		</div>
+		<div class="media clearfix">
+			<ul>
+				<li>
+					<a href="">
+						<img src="./images/tb.png">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="./images/tb.png">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="./images/tb.png">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="./images/tb.png">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="./images/tb.png">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="./images/tb.png">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="./images/tb.png">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="./images/tb.png">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="./images/tb.png">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="./images/tb.png">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="./images/tb.png">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="./images/tb.png">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="./images/tb.png">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="./images/tb.png">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="./images/tb.png">
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="subnav">
+			<a href="#">shopcmd</a> |
+			<a href="#">shopcmd</a> |
+			<a href="#">shopcmd</a> |
+			<a href="#">shopcmd</a> |
+			<a href="#">shopcmd</a> |
+			<a href="#">shopcmd</a>
+		</div>
+		<p>
+			@北京网备案www.dfh168.cn
+		</p>
+	</div>
+	
+</body>
+</html>

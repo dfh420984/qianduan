@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>固定定位</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding:0;
+		}
+
+		.top {
+			height: 44px;
+			background-color: pink;
+			background:url('./images/top.png') no-repeat top center; 
+		}
+
+		.box{
+			width: 1002px;
+			margin: 0 auto;
+		}
+
+		.ad-l,.ad-r {
+			position: fixed;
+			top: 100px;
+		}
+
+		.ad-l {
+			left: 0;
+		}
+
+		.ad-r {
+			right: 0;
+		}
+	</style>
+</head>
+<body>
+	<img src="./images/ad-l.png" class="ad-l">
+	<img src="./images/ad-r.png" class="ad-r">
+	<div class="top">
+		
+	</div>
+	<div class="box">
+		<img src="./images/box.png">
+	</div>
+</body>
+</html>

@@ -1,0 +1,178 @@
+body {
+	background-color: #f3f5f7;
+}
+
+header {
+	width: 1300px;
+	height: 100px;
+	margin: 0 auto;
+	padding-top: 30px;
+}
+
+.logo {
+	width: 195px;
+	height: 42px;
+	float: left;
+	margin-right: 20px;
+}
+
+.logo a {
+	display: block;
+	width: 195px;
+	height: 42px;
+	background: url(../images/logo.png) no-repeat;
+	text-indent: -9999em;
+	overflow: hidden;
+}
+
+nav {
+	float: left;
+}
+
+nav li {
+	float: left;
+	height: 40px;
+	line-height: 40px;
+	margin-left: : 25px; 
+
+}
+
+nav li a {
+	display: block;
+	height: 100%;
+	font-size: 18px;
+	padding: 0 10px;
+}
+
+nav li a:hover {
+	border-bottom: 2px solid #00a4ff;
+}
+
+.search {
+	width: 410px;
+	height: 40px;
+	float: left;
+	margin-left: 160px;
+}
+
+.search input {
+	width: 360px;
+	height: 40px;
+	border: 1px solid #00a4ff;
+	outline: none;
+	padding-left: 10px;
+	float: left;
+}
+
+.search button {
+	width: 49px;
+	height: 40px;
+	outline: none;
+	border: 0;
+	float: left;
+	background: url(../images/fa-search.png) no-repeat;
+}
+
+.personal {
+	width: 260px;
+	height: 40px;
+	float: right;
+	line-height: 40px;
+}
+
+.personal dt, .personal dd {
+	float: left;
+}
+
+.personal s {
+	width: 14px;
+	height: 16px;
+	padding: 0 20px;
+	text-decoration: none;
+	position: relative;
+}
+
+.personal s::before {
+	content: "";
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	right: 15px;
+	background-color: red;
+}
+
+.personal img {
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+.banner {
+	height: 420px;
+	background-color: #1c036c;
+}
+
+.banner .inner {
+	height: 420px;
+	position: relative;
+}
+
+.subnav {
+	width: 190px;
+	height: 420px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: rgba(0, 0, 0, .3);
+	padding-top: 20px;
+}
+
+.subnav li {
+	height: 40px;
+	line-height: 40px;
+	padding-left: 20px;
+	position: relative;
+}
+
+.subnav li a {
+	display: block;
+	font-size: 14px;
+	color: #fff;
+}
+
+.subnav a:hover {
+	color: #00b4ff;
+}
+
+.subnav li span {
+	position: absolute;
+	top: 0;
+	right: 20px;
+}
+
+.circle {
+	position: absolute;
+	width: 176px;
+	height: 20px;
+	left: 50%;
+	bottom: 33px;
+	margin-left: -88px;
+	line-height: 20px;
+}
+
+.circle i {
+	display: inline-block;
+	width: 13px;
+	height: 13px;
+	background: rgba(255, 255, 255, 0.4);
+	margin: 0 5px;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: all 0.4s;
+}
+
+.circle i:hover {
+	background-color: #fff;
+	width: 20px;
+}

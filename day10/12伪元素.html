@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	div::before {
+		/*before after都是行内盒子*/
+		content: "我";
+		width: 200px;
+		height: 200px;
+		background-color: pink;
+		display: block;
+	}
+	div:after {
+		content: "18岁";
+	}
+</style>
+<body>
+	<div>今年</div>
+</body>
+</html>

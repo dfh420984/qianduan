@@ -190,5 +190,49 @@ nav li a:hover {
 	right: 0;
 	top: 50%;
 	transform: translate(0, -50%);
-	background-color: skyblue;
+	background-color: #fff;
+}
+
+.timebook dt {
+	height: 50px;
+	background-color: #9bceea;
+	font-weight: 700;
+	color: #fff;
+	line-height: 50px;
+	font-size: 18px;
+	text-align: center;
+}
+
+.timebook dd {
+	padding: 15px 20px 0;
+}
+
+.timebook dd li {
+	height: 60px;
+	border-bottom: 1px solid #ccc;
+	padding-top: 5px;
+}
+
+.timebook dd li:last-child {
+	border: 0;
+}
+
+.timebook  h5 {
+	font-size: 16px;
+	font-weight: normal;
+}
+
+.all {
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid #22b0ff;
+	color: #22b0ff;
+	text-align: center;
+	font-size: 16px;
+}
+
+.all:hover{
+	background-color: #22b0ff;
+	color:#fff;
 }

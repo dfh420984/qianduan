@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css" media="screen">
+	.translate {
+		width: 200px;
+		height: 200px;
+		background-color: pink;
+		transition: all 0.3s;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+	}
+
+	.translate:hover {
+       transform: translate(-50%, -50%);  /*浮动盒子水平居中，垂直居中*/
+	}
+
+	.scale {
+		width: 200px;
+		height: 200px;
+		background-color: red;
+	}
+
+	.scale:hover {
+       transform: scale(0.8, 0.8);  /*缩放*/
+	}
+</style>
+<body>
+	<div class="translate">
+		
+	</div>
+
+	<div class="scale">
+		
+	</div>
+</body>
+</html>

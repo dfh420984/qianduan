@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	section {
+		width: 80%;
+		height: 100px;
+		margin: 100px auto;
+		/*给父亲添加伸缩布局*/
+		display: flex;
+		min-width: 500px; /*最小宽度*/
+		max-width: 1300px; /*最大宽度*/
+		/*flex-direction: column;*/
+	}
+
+	section div {
+		height: 100%;
+		flex: 1; /*孩子的份数， 默认水平划分*/
+	}
+
+	section div:nth-child(1) {
+		background-color: pink;
+		flex: 2;
+	}
+
+	section div:nth-child(2) {
+		background-color: green;
+		margin: 0 10px;
+	}
+
+	section div:nth-child(3) {
+		background-color: yellow;
+	}
+</style>
+<body>
+	<section>
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+	</section>
+</body>
+</html>

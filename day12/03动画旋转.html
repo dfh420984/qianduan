@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	div {
+		width: 214px;
+		height: 214px;
+		background-color: pink;
+		position: relative;
+	}
+
+	div p {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	div img {
+		animation: rotate 1s linear infinite;
+	}
+
+	@keyframes rotate {
+		from {
+			transform: rotate(0deg);
+		}
+
+		to {
+			transform: rotate(360deg);
+		}
+	}
+</style>
+<body>
+	<div>
+		<img src="images/web.png" alt="">
+		<p>web前端</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		li {
+			list-style: none;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<span>我是span</span>
+		<p>我是段落</p>
+		<ul>
+			<li>我是li1</li>
+			<li>我是li2</li>
+		</ul>
+	</div>
+</body>
+</html>
+<script>
+	var ulobj = document.getElementsByTagName("ul")[0];
+	// console.log(ulobj);
+	// console.log(ulobj.parentNode);
+	// console.log(ulobj.childNodes);
+	// console.log(ulobj.previousSibling);
+	var divobj = document.getElementsByTagName("div")[0];
+	var childNodes = divobj.childNodes;
+	for (var i = 0; i < childNodes.length; i++) {
+		console.log(childNodes[i].nodeName);
+		if (childNodes[i].nodeType == 1 && childNodes[i].nodeName == "SPAN") {
+			childNodes[i].style.backgroundColor = 'red';
+		}
+	}
+</script>

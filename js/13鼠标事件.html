@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+</body>
+</html>
+<script type="text/javascript">
+	var liobj = document.getElementsByTagName("li");
+	for (var i = 0; i < liobj.length; i++) {
+		liobj[i].onmouseover = function() {
+			this.style.backgroundColor = 'yellow';
+		}
+		liobj[i].onmouseout = function() {
+			this.style.backgroundColor = '';
+		}
+	}
+</script>

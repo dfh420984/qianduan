@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	div {
+		margin: 0 auto;
+	}
+	#box {
+		margin-top: 200px;
+		position: relative;
+	}
+	input {
+		outline: none;
+		position: relative;
+		top: 0;
+		left: 50%;
+		transform: translate(-50%);
+	}
+	.search {
+		height: 20px;
+		width: 300px;
+		border: 1px solid #ccc;
+	}
+	li {
+		list-style: none;
+	}
+</style>
+<body>
+	<div id="box">
+		<input class="search" type="text" name="" id="txt">
+		<input type="button" value="搜索" id="btn" style="margin-left:-120px;">	
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	var keywords = ["小段你最帅","小样你走着瞧","小子你很嚣张啊","美女你好漂亮","美丽的姑凉","美克家居稀烂"];
+	document.getElementById("txt").onkeyup = function() {
+		var val = this.value;
+		var tmpArr = [];
+		for (var i = 0; i < keywords.length; i++) {
+			if (val) {
+				if (keywords[i].indexOf(val) == 0) {
+					tmpArr.push(keywords[i]);
+				}
+			}
+		}
+		console.log(tmpArr);
+		var boxObj = document.getElementById("box");
+		var dvObj = document.getElementById("dv");
+		if (tmpArr.length > 0) {
+			if (!dvObj) {
+				var cObj = document.createElement("div");
+				cObj.id = "dv";
+				cObj.style.width = "300px";
+				cObj.style.border  = "1px solid green";
+				var str = "<ul>";
+				for (var i = 0; i < tmpArr.length; i++) {
+					str += "<li>"+tmpArr[i]+"</li>";
+				}
+				boxObj.appendChild(cObj);
+				str += "</ul>";
+				cObj.innerHTML = str;
+				var liobj = document.getElementsByTagName("li");
+				for (var j=0; j < liobj.length; j++) {
+					liobj[j].onmouseover = function() {
+						this.style.backgroundColor = 'yellow';
+					}
+					liobj[j].onmouseout = function() {
+						this.style.backgroundColor = '';
+					}
+				}
+			}
+		} else {
+			if (dvObj) {
+				boxObj.removeChild(dvObj);
+			}
+		}
+		
+	}
+</script>

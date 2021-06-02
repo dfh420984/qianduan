@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<img src="images/lb1.jpg" alt="">
+</body>
+</html>
+<script type="text/javascript">
+	var imgobj = document.getElementsByTagName("img")[0];
+	var i = 2;
+	var f1 = function() {
+		imgobj.src = "images/lb"+i+".jpg";
+		if (i == 5) {
+			i = 1;
+		} else {
+			i++;
+		}
+	}
+	window.setInterval(f1, 2000);
+</script>

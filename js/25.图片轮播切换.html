@@ -9,26 +9,83 @@
 		}
 
 		#box {
-			background-color: #ccc;
+			width: 200px;
+			margin: 100px auto;
+			padding: 5px;
+			border: 1px solid #ccc;
 		}
 		.inner{
 			width: 200px;
-			height: 200px;
-			margin: 0 auto;
+			height: 125px;
 			background-color: pink;
+			position: relative;
+			overflow: hidden;
 		}
 
+		.inner ul {
+			width: 1000%;
+			height: 100%;
+			line-height: 100%;
+			list-style: none;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
 		.inner li {
 			width: 200px;
-			height: 200px;
-			line-height: 200px;
 			float: left;
-			list-style: none;
+			cursor: pointer;
 		}
 
 		.inner li img {
-			width: 200px;
+			width: 100%;
 			height: auto;
+		}
+
+		.square {
+			position: absolute;
+			left: 50%;
+			bottom: 10px;
+			transform: translate(-50%);
+		}
+		.square span {
+			display: inline-block;
+			text-align: center;
+			width: 14px;
+			height: 14px;
+			line-height: 14px;
+			font-size: 14px;
+			border-radius: 50%;
+			border: 1px solid #ccc;
+			background-color: #fff;
+		}
+
+		.square .current {
+			background-color: pink;
+		}
+
+		#arr {
+			display: none;
+		}
+
+		#arr span {
+			width: 20px;
+			height: 20px;
+			line-height: 20px;
+			text-align: center;
+			position: absolute;
+			top: 50%;
+			transform: translate(0, -50%);
+			background: rgba(255,255,255,0.3);
+			cursor: pointer;
+		}
+
+		#arr #left {
+			left: 0;
+		}
+
+		#arr #right {
+			right: 0;
 		}
 	</style>
 </head>
@@ -61,15 +118,126 @@
 						<img src="images/5.jpg" alt="">
 					</a>
 				</li>
+				<li>
+					<a href="#" title="">
+						<img src="images/1.jpg" alt="">
+					</a>
+				</li>
 			</ul>
 			<div class="square">
-				<span>1</span>
+				<span class="current">1</span>
 				<span>2</span>
 				<span>3</span>
 				<span>4</span>
 				<span>5</span>
 			</div>
+			<div id="arr"><span id="left"><</span><span id="right">></span></div>
 		</div>
 	</div>
 </body>
 </html>
+<script type="text/javascript">
+	var box = document.getElementById("box");
+	//获取相框
+	var inner = box.children[0];
+	//获取相框宽度
+	var innerWidth = inner.offsetWidth;
+	//获取ul
+	var ul = inner.children[0];
+	var list = ul.getElementsByTagName("li");
+	//获取所有span
+	var spans = inner.children[1].children;
+	//获取箭头相关对象
+	var arr = document.getElementById("arr");
+	var right = document.getElementById("right");
+	var left = document.getElementById("left");
+	var index = 0;
+	//为所有span注册鼠标进入事件
+	for (var i = 0; i < spans.length; i++) {
+		//保存索引值
+		spans[i].setAttribute("index", i);
+		spans[i].onmouseover = function() {
+			//去掉其他元素背景色
+			for (var j = 0; j < spans.length; j++) {
+				spans[j].removeAttribute('class');
+			}
+			//设置当前元素背景颜色
+			this.className = "current";
+			//移动ul
+			index = this.getAttribute("index");
+			animate(ul, -index*innerWidth);
+		}
+	}
+	//设置自动播放
+	var timeId = window.setInterval(rightClickHandler, 1500);
+
+	//显示隐藏arr
+	box.onmouseover = function() {
+		arr.style.display = "block";
+		window.clearInterval(timeId);
+	}
+
+	//显示隐藏arr
+	box.onmouseout = function() {
+		arr.style.display = "none";
+		timeId = window.setInterval(rightClickHandler, 1500);
+	}
+
+	//左右按钮点击滑动图片
+	right.onclick = rightClickHandler;
+
+	left.onclick = function() {
+		if (index == 0) {
+			index = 5;
+			ul.style.left = -index*innerWidth+"px";
+		}
+		index--;
+		animate(ul, -index*innerWidth);
+		//先去掉所有小按钮颜色
+		for (var j = 0; j < spans.length; j++) {
+			spans[j].removeAttribute('class');
+		}
+		spans[index].className = 'current';
+	}
+
+
+	function rightClickHandler() {
+		if (index == list.length - 1) {
+			index = 0;
+			ul.style.left = 0 + "px";
+		}
+		index++;
+		animate(ul, -index*innerWidth);
+		if (index == list.length - 1) {
+			spans[index - 1].className = '';
+			spans[0].className = 'current';
+		} else {
+			for (var i = 0; i < spans.length; i++) {
+				spans[i].className = '';
+			}
+			spans[index].className = 'current';
+		}
+	}
+
+	//动画函数
+	function animate(element, target) {
+		window.clearInterval(element.timeId);
+		element.timeId = window.setInterval(function(){
+			//移动开始位置
+			var current = element.offsetLeft;
+			//移动步数
+			var step = 10;
+			step = current < target ? step : -step;
+			//移动目标位置
+			current += step;
+			//判断当前位置是否移动到了目标位置
+			if (Math.abs(current - target) > Math.abs(step)) {
+				element.style.left = current+"px";
+			} else {
+				window.clearInterval(element.timeId);
+				//直接到达目标
+        		element.style.left = target + "px";
+			}
+		}, 20);
+	}
+</script>

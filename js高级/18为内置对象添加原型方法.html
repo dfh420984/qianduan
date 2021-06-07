@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	// var arr = new Array(10, 30, 20, 15, 40);
+	// arr.join("|");
+	// console.dir(arr);
+
+	// var str =  new String("哈哈哈");
+	// console.dir(str);
+
+	// var dt = new Date();
+	// dt.getFullYear();
+	// console.dir(dt);
+
+	//为Array内置对象的原型对象中添加方法
+	Array.prototype.mySort = function() {
+		for (var i = 0; i < this.length - 1; i++) {
+			for (var j = 0; j < this.length - 1; j++) {
+				if(this[j]<this[j+1]){
+                  var temp=this[j];
+	                this[j]=this[j+1];
+	                this[j+1]=temp;
+              	}
+			}
+		}
+	}
+	var arr=[100,3,56,78,23,10];
+    arr.mySort();
+    //console.log(arr);
+    console.dir(arr);
+
+     String.prototype.myReverse=function () {
+      for(var i=this.length-1;i>=0;i--){
+        console.log(this[i]);
+      }
+    };
+    var str="abcdefg";
+    str.myReverse();
+    console.dir(String);
+</script>

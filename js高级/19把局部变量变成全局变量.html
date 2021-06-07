@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	//函数自调用
+	(function(win) {
+		var num = 10;
+		win.num = num;
+	})(window);
+	console.log(window.num);
+
+	(function(win) {
+		//定义随机数构造函数
+		function Random() {
+
+		}
+		//给构造函数原型对象设置随机数方法
+		Random.prototype.getRandom = function(min, max) {
+			return Math.floor(Math.random()*(max-min)+min);
+		}
+		win.Random = Random;
+	})(window);
+	var rm = new Random();
+	console.log(rm.getRandom(10, 20));
+</script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	function Person(name, age, sex) {
+		this.name = name;
+		this.age = age;
+		this.sex = sex;
+	}
+
+	Person.prototype.play = function() {
+		console.log('人会玩');
+	}
+
+	Person.prototype.eat = function() {
+		console.log('人会吃');
+	}
+
+	Person.prototype.sleep = function() {
+		console.log('人会睡觉');
+	}
+
+	function Studet(score) {
+		this.score = score;
+	}
+
+	//此处改变学生原型对象指向为人对象,实现继承，达到代码复用
+	Studet.prototype = new Person('xiaoming', 22, '男');
+
+	Studet.prototype.study = function() {
+		console.log(this.score);
+	}
+
+	var stu = new Studet(100);
+
+	stu.play();
+	stu.eat();
+	stu.sleep();
+	stu.study();
+</script>

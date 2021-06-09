@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	//call和apply都可以改变this指向，调用后this指向传入的object参数，就是传入参数形式不一样
+	function Person(name, age) {
+		this.name = name;
+		this.age = age;
+	}
+
+	Person.prototype.sayHi = function(x, y) {
+		console.log('你好啊：'+this.name+"==="+this.age+"=="+(x+y));
+	}
+
+	function Student(name, age) {
+		this.name = name;
+		this.age = age;
+	}
+
+	var per = new Person('小明', 20);
+	var stu = new Student('小三', 18);
+	console.log(per.sayHi.apply(stu, [10, 20]));
+	console.log(per.sayHi.call(stu, 10, 20));
+
+	function f1() {
+		console.log(this.eat());
+	}
+
+	var obj = {
+		name: 'xiaowang',
+		age: 20,
+		eat: function() {
+			console.log('吃饭啦');
+		}
+	}
+
+	f1.call(obj);
+</script>

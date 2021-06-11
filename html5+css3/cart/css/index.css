@@ -1,0 +1,16 @@
+.go {
+	width: 100px;
+	height: 100px;
+	position: fixed;
+	right: 30px;
+	top: 30px;
+	border-radius: 50%;
+	z-index: 1001;
+}
+
+.more {
+	position: fixed;
+	right: 60px;
+	bottom: 80px;
+	z-index: 1001;
+}

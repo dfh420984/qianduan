@@ -47,7 +47,7 @@
     }
   </style>
   <script src="jquery-1.12.1.js"></script>
-  <script>
+  <!-- <script>
     $(function () {
 
       //全选和全不选
@@ -88,6 +88,25 @@
       });
 
 
+    });
+  </script> -->
+
+  <script type="text/javascript">
+    $(function () {
+      $("#j_cbAll").click(function(event) {
+        /* Act on the event */
+        $("#j_tb").find("input").prop("checked", $(this).prop("checked"));
+      });
+
+      //每个复选框都要注册点击事件
+      $("#j_tb").find("input").click(function(event) {
+        /* Act on the event */
+        //获取所有input个数
+        var len1 = $("#j_tb").find("input").length;
+        //获取当前选中个数
+        var len2 = $("#j_tb input:checked").length;
+        $("#j_cbAll").prop("checked", len1 == len2);
+      });
     });
   </script>
 

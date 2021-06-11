@@ -76,7 +76,7 @@
     //有些事现在不做,是为了以后做的更好
 
   </script>
-  <script>
+  <!-- <script>
 
 
     //页面加载的事件
@@ -90,6 +90,19 @@
         var index=$(this).index();
         //获取下面的所有的div
         $(".products>div:eq("+index+")").addClass("selected").siblings("div").removeClass("selected");
+      });
+    });
+  </script> -->
+
+  <script type="text/javascript">
+    $(function(){
+      $(".tab>li").mouseenter(function(event) {
+        //设置当前li样式，并移除其他li选中样式
+        $(this).addClass('active').siblings('li').removeClass('active'); //链式编程
+        //获取当前li索引值，修改tab对应div
+        var index = $(this).index();
+        //设置对应div显示，其他隐藏
+        $(".products>div:eq("+index+")").addClass('selected').siblings("div").removeClass('selected');
       });
     });
   </script>

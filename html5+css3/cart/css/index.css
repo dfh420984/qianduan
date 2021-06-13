@@ -10,7 +10,374 @@
 
 .more {
 	position: fixed;
-	right: 60px;
-	bottom: 80px;
+    right: 60px;
+    bottom: 80px;
+    z-index: 1001;
+    animation: more 0.3s linear infinite alternate;
+}
+
+.content {
+	width: 900px;
+	height: 600px;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin-left: -450px;/*
+	background: rgba(0, 0, 0, 0.1);*/
+}
+
+/*第一屏样式*/
+.screen01 {
+	background: url(../images/01-bg.png) no-repeat center bottom;
+}
+
+.screen01 .goods {
+	margin-top: 230px;
+	text-align: center;
+}
+
+.screen01 .sofa {
+	position: absolute;
+	left: 230px;
+	top: 150px;
+	animation: sofa 0.8s linear infinite alternate;
+}
+
+.screen01 .fly {
+	position: absolute;
+	right: -50px;
+	top: 20px;
+	animation: fly 1s linear infinite alternate;
+}
+
+/*第二屏幕样式*/
+.screen02 {
+	background: url(../images/02-bg.png) no-repeat center bottom;
+}
+
+.screen02 .goods {
+	position: absolute;
+	left: 50%;
+	bottom: 210px;
+	/*transform: translateX(-50%);*/
+	margin-left: -220px;
+	transform: scale(0);
+	transform-origin: right bottom;
+}
+
+.screen02 .sofa{
+    transform: scale(0.5);
+    position: absolute;
+    left: 292px;
+    top: 132px;
+    opacity: 0;
+    z-index: 1001;
+}
+
+.screen02 .input {
+    position: absolute;
+    right: 171px;
+    top: 120px;
+    /*右上角: transform: scale(0.7);*/ 
+    /*中心位置: transform: translate(-180px, 130px);*/
+    /*初始最右边位置*/
+    /*transform: translate(2000px, 130px);*/
+    transform-origin: right top;
+    opacity: 0;
+}
+
+.screen02 .input .key {
+	position: absolute;
+    left: 100px;
+    top: 4px;
+    opacity: 0
+}
+
+.screen02 .text {
+    text-align: center;
+}
+
+.screen02 .text .text01 {
+    
+}
+
+.screen02 .text .text02 {
+    /* display: none; */
+    position: absolute;
+    opacity: 0;
+}
+
+/*第三屏*/
+.screen03 {
+    background: url(../images/03-bg.png) no-repeat center bottom;
+}
+
+.screen03 .sofa {
+    position: absolute;
+    left: 212px;
+    top: 180px;
+    display: none;
+}
+
+.screen03 .change {
+	position: absolute;
+	right: 115px; 
+	bottom: 170px;
+}
+
+.screen03 .change img:last-child {
+	position: absolute;
+	opacity: 0;
+}
+
+.screen03 .cart {
+	position: absolute;
+	right: 192px; 
+	bottom: 100px;
+}
+
+.screen03 .cart img:last-child {
+	position: absolute;
+	opacity: 0;
+}
+
+/*第四屏*/
+.screen04 {
+    background: url(../images/04-bg.png) no-repeat center bottom;
+}
+
+.screen04 .cloud {
+	position: absolute;
+	left: -400px;
+	top: -50px;
+	animation: cloud04 10s linear infinite alternate;
+}
+
+.screen04 .text {
+	text-align: center;
+	margin-top: 120px;
+}
+
+.screen04 .text img:last-child {
+	position: absolute;
+	opacity: 0;
+}
+
+.screen04 .text.show img:first-child {
+	position: absolute;
+	opacity: 0;
+}
+
+.screen04 .text.show img:last-child {
+	position: static;
+	opacity: 1;
+	transition: all 1s linear;
+}
+
+.screen04 .cart {
+	text-align: center;
+	margin-top: 50px;
+	position: relative;
+	z-index: 1002;
+}
+
+.screen04 .sofa {
+    position: absolute;
+    top: 200px;
+    left: 420px;
+    transform: rotate(45deg);
+    /*display: none;*/ /*动画过渡时会有问题*/
+    opacity: 0;
+}
+
+.screen04 .address {
+	width: 283px;
+	height: 270px;
+    position: absolute;
+    left: 50%;
+    /*css3居中方式*/
+    transform: translateX(-50%);
+    bottom: 150px;
+    display: none;
+}
+
+.screen04 .address img:last-child {
+	position: absolute;
+	top: 60px;
+	left: 50%;
+    /*css3居中方式*/
+    transform: translateX(-50%);
+    z-index: 1;
+    display: none;
+}
+
+
+/*1.掐时间  做延时  完成动画的衔接*/
+/*2.jquery的动画  $('dom').animate(property,duration,speed,callback) */
+/*speed  (swing linear) */
+/*3.能不能监听到动画或者过度的结束*/
+/*4.css3当中 过渡 transitionend  动画 animationend*/
+.screen04.now .sofa {
+	/*display: block;*/
+	opacity: 1;
+	transition: transform 3s;
+	transform: translateX(1000px);
+}
+
+.screen04.now .cart {
+	transition: all 3s;
+	transform: translateX(1000px);
+}
+
+
+
+/**
+*第一屏动画
+*/
+@keyframes fly {
+	from{
+        transform: translateY(-30px);
+    }
+    /*50%{
+        transform: translateY(50px);
+    }*/
+    to{
+        transform: translateY(30px);
+    }
+}
+
+@keyframes more {
+	from{
+        transform: translateY(-10px);
+    }
+    to{
+        transform: translateY(10px);
+    }
+}
+
+@keyframes sofa {
+	from{
+        transform: translateY(-20px);
+    }
+    to{
+        transform: translateY(20px);
+    }
+}
+
+/*第二屏动画*/
+.screen02.now .text .text01 {
+    /* display: none; */
+    position: absolute;
+    opacity: 0;
+}
+
+.screen02.now .text .text02 {
+    /* display: none; */
+    position: static;
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+.screen02.now .input {
+	/*播放完成状态控制，backwards回到原点，forwards停在当前位置*/
+	animation: input02 3s linear forwards;
+}
+
+.screen02.now .input .key {
+	opacity: 1;
+	transition: all 1s linear 1s;
+}
+
+.screen02.now .goods {
+	/*transform: scale(1);*/
+	transform: none;
+	transition: transform 1s linear 2s;
+}
+
+/*1.搜索框在右边出来*/
+@keyframes input02 {
+	0% {
+		opacity: 1;
+		transform: translate(2000px, 130px);
+	}
+	33.3% {
+		transform: translate(-180px, 130px);
+	}
+	67% {
+		transform: translate(-180px, 130px);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(0.7);
+	}
+}
+
+/*沙发做动画  当离开第二屏  和页面的滚动同步 动画时间保持一致*/
+.screen02.leaved .sofa{
+    animation: sofa02 1s linear;
+}
+
+@keyframes sofa02 {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 1;
+        /*沙发下移*/
+        transform: translate(-80px, 700px);
+    }
+}
+
+/*第三屏相关动画*/
+.screen03.now .change img:first-child {
+	display: none;
+}
+
+.screen03.now .change img:last-child {
+	position: static;
+	opacity: 1;
+	transition: all 1s linear;
+}
+
+.screen03.now .cart img:last-child {
+	position: static;
+	opacity: 1;
+	transition: all 1s linear;
+}
+
+.screen03.now .cart img:first-child {
+	display: none;
+}
+
+.screen03.now .sofa {
+	display: block;
 	z-index: 1001;
 }
+
+.screen03.leaved .sofa {
+	/*旋转之后坐标轴也会旋转，最好先位移，在旋转*/
+	animation: sofa03 1s linear;
+}
+
+@keyframes sofa03 {
+	from {
+
+	}
+	to {
+		transform: translate(190px, 660px) rotate(45deg);
+	}
+}
+
+/*第四屏动画*/
+@keyframes cloud04 {
+	from {
+
+	}
+	to {
+		transform: translateX(1000px);
+	}
+}
+
+
+/*2.在显示器中间停留，显示关键字*/
+/*3.商品列表显示出来 搜索框位移到又上角*/

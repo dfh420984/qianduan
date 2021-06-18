@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	/**正向匹配
+	*我们要查找出来的内容，右边必须出现指定的信息，并且其是辅助条件，不是结果的一部分
+	*/
+	var str = "beijing2008"; //小写字母字符串后边要出现连续数字信息
+	var str1 = "hellohaha";
+	var reg = /[a-z]+(?=\d+)/;
+	console.log(str.match(reg));  //beijing
+	console.log(str1.match(reg)); //null
+
+	//获取url地址中get参数名称
+    var str = 'http://www.baidu.com?tag=t&name=tom&age=20';//["tag", "name", "age"]
+    var reg = /\w+(?==)/g;
+    console.log(str.match(reg));
+
+    //正向不匹配,后面不出现相关信息
+    //数字后面不要出现字母
+    var reg = /\d{4}(?![a-zA-Z])/;
+    var str = '2221abc';//null
+    var str = '001145';//["0011", index: 0, input: "001145"]
+    var str = '1234##';//["1234", index: 0, input: "1234##"]
+    var rst = str.match(reg);
+    console.log(rst);
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <style>
+    div{
+      width: 300px;
+      height: 200px;
+      border:1px solid red;
+    }
+  </style>
+  <script src="jquery-1.12.1.js"></script>
+  <script>
+    $(function () {
+      //点击一个按钮,创建一个按钮
+//      $("#btn").click(function () {
+//        $("<input type='button' value='按钮'>").appendTo($("#dv"));
+//      });
+      //元素创建的另一个方式
+      $("#btn").click(function () {
+        //通过innerHTML的方式创建元素---以字符串的方式
+        $("#dv").html("<input type='button' value='按钮'>");
+      });
+
+    });
+
+  </script>
+</head>
+<body>
+<input type="button" value="创建一个按钮" id="btn"/>
+<div id="dv">
+  小苏凑合有点帅吧
+
+</div>
+
+</body>
+</html>

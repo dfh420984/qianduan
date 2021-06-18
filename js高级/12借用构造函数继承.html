@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	//组合继承 = 借用构造函数 + 原型继承
+	function Person(name, age, sex) {
+		this.name = name;
+		this.age = age;
+		this.sex = sex;
+	}
+
+	Person.prototype.sayHi = function() {
+		console.log('你好啊');
+	}
+
+	function Student(name, age, sex, score) {
+		//借用Person构造函数，解决属性值重复问题
+		Person.call(this, name, age, sex);
+		this.score = score;
+	}
+
+	//原型继承,解决方法共享
+	Student.prototype = new Person(); //改变原型指向
+
+	var stu1 = new Student('小明', 20, '男', 88);
+	var stu2 = new Student('小王', 18, '男',90);
+	console.log(stu1.name,stu1.age,stu1.sex,stu1.score);
+	console.log(stu2.name,stu2.age,stu2.sex,stu2.score);
+	stu1.sayHi();
+</script>

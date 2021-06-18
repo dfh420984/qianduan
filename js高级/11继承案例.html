@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	function Animal(color, weight, name) {
+		this.color = color;
+		this.weight = weight;
+		this.name = name;
+	}
+
+	Animal.prototype.eat = function() {
+		console.log('吃东西');
+	}
+
+	function Dog(sex) {
+		this.sex = sex;
+	}
+	//够继承animal
+	Dog.prototype = new Animal('白色', '20kg', '啸天犬');
+	Dog.prototype.bite = function() {
+		console.log('咬人');
+	}
+
+	function Erha(from) {
+		this.from = from;
+	}
+
+	//继承Dog
+	Erha.prototype = new Dog("雄性");
+	var erha = new Erha("美国");
+	console.log(erha.color, erha.name, erha.sex, erha.from);
+	erha.eat();
+	erha.bite();
+</script>

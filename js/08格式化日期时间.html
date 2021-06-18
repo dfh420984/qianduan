@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function getDateTime(dt) {
+			var year = dt.getFullYear();
+			var month = zeroPad(dt.getMonth() + 1);
+			var date = zeroPad(dt.getDate());
+			var hour = zeroPad(dt.getHours());
+			var minute = zeroPad(dt.getMinutes());
+			var second = zeroPad(dt.getSeconds());
+			var datetime = year + '-' + month + '-' + date + ' ' + hour + ':' + minute + ':' + second;
+			return datetime;
+		}
+
+		function zeroPad(num) {
+			return num < 10 ? "0" + num : num;
+		}
+		console.log(getDateTime(new Date()))
+	</script>
+</head>
+<body>
+
+</body>
+</html>

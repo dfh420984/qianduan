@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <style>
+    div{
+      width: 200px;
+      height: 100px;
+      border: 2px solid red;
+    }
+  </style>
+  <script src="jquery-1.12.1.js"></script>
+  <script>
+    //页面加载
+    $(function () {
+      //点击按钮
+      $("#btn").click(function () {
+        //从父级元素中移除子级元素---移除所有的子元素
+        //$("#dv").html("");
+        //清空父元素中的子元素
+        //$("#dv").empty();//清空
+        //想要干掉谁,直接找到这个元素,调用这个方法就可以了
+        $("#dv").remove();//自杀---
+      });
+    });
+  </script>
+</head>
+<body>
+<input type="button" value="移除元素" id="btn"/>
+<div id="dv">
+  <p>这是一个p</p>
+  <span>这是一个span</span>
+</div>
+
+</body>
+</html>

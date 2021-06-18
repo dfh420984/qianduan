@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	html, body {
+		width: 100%;
+		height: 100%;
+		background-color: #0EA9B1;
+		overflow: hidden;
+	}
+	img {
+		width: 100%;
+		height: auto;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+	}
+	img:first-child {
+		animation: move 2s ease infinite;
+	}
+	img:last-child {
+		animation: move 1s ease infinite;
+	}
+	
+	.son {
+		width: 100px;
+		height: 100px;
+		margin: 100px 100px;
+		position: relative;
+	}
+
+	.son::before, .son::after {
+		content: "";
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		background: rgba(255, 255, 255, 0.8);
+		border-radius: 50%;
+		transform: translate(-50%, -50%);
+		animation: sun 1s ease infinite;
+	}
+
+	.son::after {
+		width: 80px;
+		height: 80px;
+		background: rgba(255, 255, 255, 0.6);
+		animation: sun 2s ease infinite;
+	}
+
+	@keyframes sun {
+		0% {
+			transform: translate(-50%, -50%) scale(1);
+			box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.7);
+		}
+		50% {
+			transform: translate(-50%, -50%) scale(1.1);
+			box-shadow: 0px 0px 16px rgba(255, 255, 255, 0.7);
+		}
+
+		100% {
+			transform: translate(-50%, -50%) scale(1);
+			box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.7);
+		}
+	}
+
+	@keyframes move {
+		0% {
+			bottom: 0;
+		}
+		50% {
+			bottom: -50px;
+		}
+
+		100% {
+			bottom: 0;
+		}
+	}
+</style>
+<body>
+	<div class="son">
+		
+	</div>
+	<img src="images/1.png" alt="">
+	<img src="images/2.png" alt="">
+</body>
+</html>

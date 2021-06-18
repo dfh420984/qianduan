@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<ul>
+		<li score="60">小明</li>
+		<li score="70">小明2</li>
+		<li score="80">小明3</li>
+	</ul>
+</body>
+</html>
+<script type="text/javascript">
+	var liobjs = document.getElementsByTagName("li");
+	for (var i = 0; i < liobjs.length; i++) {
+		console.log(liobjs[i].getAttribute("score"));
+		liobjs[i].setAttribute("age", "30");
+		liobjs[i].removeAttr('age');
+	}
+</script>

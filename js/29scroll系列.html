@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		div {
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+			border: 1px solid red;
+			overflow: auto;
+			position: absolute;
+			left: 100px;
+			top:100px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		哈啊啊哈哈哈哈哈哈哈哈哈啊啊哈哈哈哈哈哈哈哈哈啊啊哈哈哈哈哈哈哈哈哈啊啊哈哈哈哈哈哈哈哈哈啊啊哈哈哈哈哈哈哈哈哈啊啊哈哈哈哈哈哈哈哈
+		哈啊啊哈哈哈哈哈哈哈哈哈啊啊哈哈哈哈哈哈哈哈哈啊啊哈哈哈哈哈哈哈哈
+		哈啊啊哈哈哈哈哈哈哈哈哈啊啊哈哈哈哈哈哈哈哈哈啊啊哈哈哈哈哈哈哈哈
+		哈啊啊哈哈哈哈哈哈哈哈哈啊啊哈哈哈哈哈哈哈哈
+		哈啊啊哈哈哈哈哈哈哈哈哈啊啊哈哈哈哈哈哈哈哈哈啊啊哈哈哈哈哈哈哈哈
+		哈啊啊哈哈哈哈哈哈哈哈哈啊啊哈哈哈哈哈哈哈哈哈啊啊哈哈哈哈哈哈哈哈
+		哈啊啊哈哈哈哈哈哈哈哈哈啊啊哈啊啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+		哈啊啊哈哈哈哈哈哈哈哈哈啊啊哈哈哈哈哈哈哈哈
+		哈啊啊哈哈哈哈哈哈哈哈哈啊啊哈哈哈哈哈哈哈哈
+		哈啊啊哈哈哈哈哈哈哈哈哈啊啊哈哈哈哈哈哈哈哈
+		哈啊啊哈哈哈哈哈哈哈哈哈啊啊哈哈哈哈哈哈哈哈
+		哈啊啊哈哈哈哈哈哈哈哈哈啊啊哈哈哈哈哈哈哈哈
+		哈啊啊哈哈哈哈哈哈哈哈哈啊啊哈哈哈哈哈哈哈哈
+		哈啊啊哈哈哈哈哈哈哈哈哈啊啊哈哈哈哈哈哈哈哈
+		哈啊啊哈哈哈哈哈哈哈哈哈啊啊哈哈哈哈哈哈哈哈
+		哈啊啊哈哈哈哈哈哈哈哈哈啊啊哈哈哈哈哈哈哈哈
+		哈啊啊哈哈哈哈哈哈哈哈哈啊啊哈哈哈哈哈哈哈哈
+		哈啊啊哈哈哈哈哈哈哈哈哈啊啊哈哈哈哈哈哈哈哈
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	var div = document.getElementsByTagName("div")[0];
+	console.log(div.offsetWidth);  //元素的宽，有边框
+	console.log(div.offsetHeight); //元素的高，有边框
+	console.log(div.scrollWidth); //元素中内容的实际宽度,如果小于元素宽度，就使用盒子宽度，没有边框
+	console.log(div.scrollHeight); //元素中内容的实际高度，如果小于元素高度，就使用盒子高度，没有边框
+	console.log(div.scrollTop); //滚动条卷曲的高度
+	console.log(div.scrollLeft); //滚动条卷曲的宽度
+
+	//滚动条事件
+	div.onscroll = function() {
+		console.log(this.scrollTop);
+	}
+</script>

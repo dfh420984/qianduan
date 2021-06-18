@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	function f1(x, y) {
+		console.log(f1.name); //函数的名字
+		console.log(f1.arguments.length); //实际参数个数
+		console.log(f1.length); //形参数个数
+		console.log(f1.caller); //函数调用者
+	}
+	f1(10, 20,30,40);
+	console.dir(f1);
+
+	function f2() {
+		f1(10, 20);
+	}
+	f2();
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div>
+		<span>我是span</span>
+		<ul>
+			<li>我是li</li>
+			<li>我是li</li>
+			<li>我是li</li>
+		</ul>
+	</div>
+	<div>
+		<p>我是p</p>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	function forDom(root) {
+		f1(root);
+		//查找子元素
+		var childs = root.children;
+		//遍历子元素
+		forDomChilds(childs);
+	}
+
+	function forDomChilds(childs) {
+		for (var k in childs) {
+			childs[k].children && forDom(childs[k]);
+		}
+	}
+
+	var root = document.documentElement;
+	forDom(root)
+
+	function f1(node){
+		console.log('节点名字:'+node.nodeName);
+	}
+</script>

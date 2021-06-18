@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="button" name="" id="btn" value="提交">
+	<input type="button" name="" id="btn2" value="修改a标签">
+	<input type="button" name="" id="btn3" value="修改多个p标签">
+	<input type="button" name="" id="btn4" value="修改多个input标签">
+	<img src="" id="img1">
+	<a href="https://www.baidu.com" title="">百度</a>
+	<div id="div1">
+		<p>test1</p>
+		<p>test1</p>
+		<p>test1</p>
+		<p>test1</p>
+		<p>test1</p>
+	</div>
+	<div id="div2">
+		<p>test2</p>
+		<p>test2</p>
+		<p>test2</p>
+		<p>test2</p>
+		<p>test2</p>
+	</div>
+	<div>
+		<input type="text" name="" value="">
+		<input type="text" name="" value="">
+		<input type="text" name="" value="">
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	document.getElementById("btn").onclick = function() {
+		var imgObj = document.getElementById("img1");
+		imgObj.src ="images/1.jpg";
+		imgObj.width = 200;
+		imgObj.height = 200;
+	}
+	document.getElementById("btn2").onclick = function() {
+		var aobj = document.getElementsByTagName("a")[0];
+		aobj.href = "https://www.smzdm.com";
+		aobj.innerText = "值得买";
+	}
+	document.getElementById("btn3").onclick = function() {
+		var pobj = document.getElementById("div1").getElementsByTagName("p")
+		console.log(pobj);
+		for (var i = 0; i < pobj.length; i++) {
+			pobj[i].innerText = "test p";
+		}
+	}
+	document.getElementById("btn4").onclick = function() {
+		var iobj = document.getElementsByTagName("input");
+		for (var i = 0; i < iobj.length; i++) {
+			if (iobj[i].type != "button") {
+				iobj[i].value = "我是谁";
+			}
+		}
+	}
+</script>

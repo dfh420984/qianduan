@@ -15,7 +15,7 @@
 </head>
 <body>
 <!-- 顶部header -->
-<header class="wjs_topBar">
+<header class="wjs_topBar  hidden-sm hidden-xs">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-2">
@@ -71,7 +71,40 @@
     </div>
 </nav>
 <!-- 轮播图 -->
-<section class="wjs_banner"></section>
+<section class="wjs_banner">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <a href="#" class="pc_imgBox hidden-xs" style="background-image: url(images/slide_01_2000x410.jpg)"></a>
+            <a href="#" class="m_imgBox hidden-lg hidden-md hidden-sm"><img src="images/slide_01_640x340.jpg" alt=""></a>
+        </div>
+        <div class="item">
+            <a href="#" class="pc_imgBox hidden-xs" style="background-image: url(images/slide_02_2000x410.jpg)"></a>
+            <a href="#" class="m_imgBox hidden-lg hidden-md hidden-sm"><img src="images/slide_02_640x340.jpg" alt=""></a>
+        </div>
+        <div class="item">
+            <a href="#" class="pc_imgBox hidden-xs" style="background-image: url(images/slide_03_2000x410.jpg)"></a>
+            <a href="#" class="m_imgBox hidden-lg hidden-md hidden-sm"><img src="images/slide_03_640x340.jpg" alt=""></a>
+        </div>
+        <div class="item">
+            <a href="#" class="pc_imgBox hidden-xs" style="background-image: url(images/slide_04_2000x410.jpg)"></a>
+            <a href="#" class="m_imgBox hidden-lg hidden-md hidden-sm"><img src="images/slide_04_640x340.jpg" alt=""></a>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#carousel-example-generic"  data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+</section>
 <!-- 信息 -->
 <section class="wjs_info"></section>
 <!-- 预约 -->

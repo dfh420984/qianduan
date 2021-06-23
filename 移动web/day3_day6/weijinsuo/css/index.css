@@ -165,6 +165,7 @@ a:hover{
 }
 .wjs_nav .navbar-toggle {
   border-color: #ddd;
+  margin-top: 23px;
 }
 .wjs_nav .navbar-toggle:hover,
 .wjs_nav .navbar-toggle:focus {
@@ -223,4 +224,22 @@ fieldset[disabled] .wjs_nav .btn-link:hover,
 .wjs_nav .btn-link[disabled]:focus,
 fieldset[disabled] .wjs_nav .btn-link:focus {
   color: #ccc;
+}
+
+/*轮播图*/
+.wjs_banner .pc_imgBox{
+  display: block;
+  height: 400px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.wjs_banner .m_imgBox{
+  display: block;
+  width: 100%;
+}
+.wjs_banner .m_imgBox img{
+  display: block;
+  width: 100%;
 }

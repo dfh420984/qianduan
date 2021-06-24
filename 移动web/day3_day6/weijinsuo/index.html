@@ -74,28 +74,10 @@
 <section class="wjs_banner">
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+        
     </ol>
     <div class="carousel-inner">
-        <div class="item active">
-            <a href="#" class="pc_imgBox hidden-xs" style="background-image: url(images/slide_01_2000x410.jpg)"></a>
-            <a href="#" class="m_imgBox hidden-lg hidden-md hidden-sm"><img src="images/slide_01_640x340.jpg" alt=""></a>
-        </div>
-        <div class="item">
-            <a href="#" class="pc_imgBox hidden-xs" style="background-image: url(images/slide_02_2000x410.jpg)"></a>
-            <a href="#" class="m_imgBox hidden-lg hidden-md hidden-sm"><img src="images/slide_02_640x340.jpg" alt=""></a>
-        </div>
-        <div class="item">
-            <a href="#" class="pc_imgBox hidden-xs" style="background-image: url(images/slide_03_2000x410.jpg)"></a>
-            <a href="#" class="m_imgBox hidden-lg hidden-md hidden-sm"><img src="images/slide_03_640x340.jpg" alt=""></a>
-        </div>
-        <div class="item">
-            <a href="#" class="pc_imgBox hidden-xs" style="background-image: url(images/slide_04_2000x410.jpg)"></a>
-            <a href="#" class="m_imgBox hidden-lg hidden-md hidden-sm"><img src="images/slide_04_640x340.jpg" alt=""></a>
-        </div>
+        
     </div>
     <a class="left carousel-control" href="#carousel-example-generic"  data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left"></span>
@@ -106,9 +88,89 @@
 </div>
 </section>
 <!-- 信息 -->
-<section class="wjs_info"></section>
-<!-- 预约 -->
-<section class="wjs_book"></section>
+<section class="wjs_info hidden-xs">
+    <div class="container">
+        <div class="col-sm-6 col-md-4">
+            <a href="#">
+                <div class="media">
+                    <div class="media-left"><span class="wjs_icon wjs_icon_dollar"></span></div>
+                    <div class="media-body">
+                        <h4 class="media-heading">支付交易保障</h4>
+                        <p>银联支付全称保证支付安全</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <a href="#">
+                <div class="media">
+                    <div class="media-left"><span class="wjs_icon wjs_icon_dollar"></span></div>
+                    <div class="media-body">
+                        <h4 class="media-heading">支付交易保障</h4>
+                        <p>银联支付全称保证支付安全</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <a href="#">
+                <div class="media">
+                    <div class="media-left"><span class="wjs_icon wjs_icon_dollar"></span></div>
+                    <div class="media-body">
+                        <h4 class="media-heading">支付交易保障</h4>
+                        <p>银联支付全称保证支付安全</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <a href="#">
+                <div class="media">
+                    <div class="media-left"><span class="wjs_icon wjs_icon_dollar"></span></div>
+                    <div class="media-body">
+                        <h4 class="media-heading">支付交易保障</h4>
+                        <p>银联支付全称保证支付安全</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <a href="#">
+                <div class="media">
+                    <div class="media-left"><span class="wjs_icon wjs_icon_dollar"></span></div>
+                    <div class="media-body">
+                        <h4 class="media-heading">支付交易保障</h4>
+                        <p>银联支付全称保证支付安全</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <a href="#">
+                <div class="media">
+                    <div class="media-left"><span class="wjs_icon wjs_icon_dollar"></span></div>
+                    <div class="media-body">
+                        <h4 class="media-heading">支付交易保障</h4>
+                        <p>银联支付全称保证支付安全</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+<!--预约-->
+<section class="wjs_book">
+    <div class="container">
+        <div class="pull-left">
+            <span class="wjs_icon wjs_icon_clock"></span>
+            现在有 273 人在排队，累计预约交易成功 7571 次。 什么是预约投标？
+            <a class="book" href="#">立即预约</a>
+        </div>
+        <div class="pull-right hidden-xs">
+            <a class="video" href="#"><span class="wjs_icon wjs_icon_video"></span> 微金所企业宣传片</a>
+        </div>
+    </div>
+</section>
 <!-- 产品 -->
 <section class="wjs_product"></section>
 <!-- 新闻 -->
@@ -116,10 +178,26 @@
 <!-- 合作伙伴 -->
 <footer class="wjs_partner"></footer>
 
-
+<script type="text/template" id="pointTemplate">
+    <% for(var i = 0 ; i < list.length ; i ++){ %>
+        <li data-target="#carousel-example-generic" data-slide-to="<%=i%>" class="<%=i==0?'active':''%>"></li>
+    <% } %>
+</script>
+<script type="text/template" id="imageTemplate">
+    <% for(var i = 0 ; i < list.length ; i ++){ %>
+    <div class="item <%=i==0?'active':''%>">
+        <% if(isMobile){ %>
+        <a href="#" class="m_imgBox"><img src="<%=list[i].mUrl%>" alt=""></a>
+        <% }else{ %>
+        <a href="#" class="pc_imgBox" style="background-image: url(<%=list[i].pcUrl%>)"></a>
+        <% } %>
+    </div>
+    <% } %>
+</script>
 
 <script src="lib/jquery/jquery.min.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/artTemplate/template-native.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>

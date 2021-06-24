@@ -23,6 +23,8 @@ $(function () {
 ];
     /*动态轮播图*/
     banner();
+    //移动端产品响应式
+    mobileProduct();
 });
 var banner = function () {
     /*1.获取轮播图数据    ajax */
@@ -113,5 +115,28 @@ var banner = function () {
         distanceX = 0;
         isMove = false;
     });
+}
 
+var mobileProduct = function() {
+    // 1.解决移动端换行问题，在一行显示
+    var navTabs = $(".wjs_product .nav-tabs");
+    var width = 0;
+    $(".wjs_product .nav-tabs").find("li").each(function(i, item){
+        //获取每个li盒子宽度，包含外边框
+        // width : 内容宽度
+        // innerWidth : 内容+内边距
+        // outerWidth: 内容 + 内边距 + 边框
+        // outerWidth(true) : 内容 + 内边距 + 边框 + 外边距
+        width += $(this).outerWidth(true);
+        //console.log(width);
+
+    });
+    //2.修改父盒子宽度
+    navTabs.width(width);
+    //3.溢出隐藏，在套一层父div盒子
+    //4.isoll插件左右滑动
+    new IScroll($('.nav-tabs-parent')[0],{
+        scrollX:true,
+        scrollY:false
+    });
 }

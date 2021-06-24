@@ -374,3 +374,54 @@ fieldset[disabled] .wjs_nav .btn-link:focus {
     border-bottom-color: #fff;
   }
 }
+.wjs_product .nav-tabs-parent {
+  width: 100%;
+  overflow: hidden;
+}
+.wjs_product .product_box {
+  display: block;
+  width: 100%;
+  height: 150px;
+  background: #fff;
+  box-shadow: 3px 3px 5px #d8d8d8;
+  margin-top: 30px;
+  color: #666;
+}
+.wjs_product .product_box:hover{
+  color: #666;
+}
+.wjs_product .product_box.active {
+  background: #e92322;
+  color: #fff;
+}
+.wjs_product .product_box .pro_left {
+  overflow: hidden;
+}
+.wjs_product .product_box .pro_right {
+  float: right;
+  width: 80px;
+  height: 150px;
+  text-align: center;
+}
+.wjs_product .product_box .pro_right p:first-child{
+  margin-top: 25px;
+  color: #e92322;
+}
+.wjs_product .product_box.active .pro_right p:first-child{
+  color: #fff;
+}
+.wjs_product .product_box .pro_right p:first-child b{
+  font-size: 48px;
+}
+.wjs_product .product_box .pro_right p:first-child sub{
+  border:0;
+  font-size: 12px;
+}
+.wjs_product .product_box .pro_right p:last-child{}
+.wjs_product .product_box .pro_left h3{
+  font-size: 16px;
+  margin-top: 10px;
+}
+.wjs_product .product_box .pro_left div{
+  font-size: 12px;
+}

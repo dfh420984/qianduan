@@ -25,6 +25,8 @@ $(function () {
     banner();
     //移动端产品响应式
     mobileProduct();
+    //工具提示
+    $('[data-toggle="tooltip"]').tooltip();
 });
 var banner = function () {
     /*1.获取轮播图数据    ajax */

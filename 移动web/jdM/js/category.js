@@ -1,4 +1,3 @@
-
 window.onload = function () {
 	document.querySelector('.jd_cateLeft').addEventListener('touchmove',function(e){ 
 

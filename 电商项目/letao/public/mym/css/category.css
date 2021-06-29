@@ -15,10 +15,8 @@
 .my-content .category-left {
 	width: 80px;
 	float: left;
-	background: pink;
 }
 
 .my-content .category-right {
 	margin-left: 90px;
-	background: blue;
 }

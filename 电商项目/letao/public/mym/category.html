@@ -12,6 +12,7 @@
     <script src="assets/artTemplate/template-native.js"></script>
     <script src="assets/mui/js/mui.min.js"></script>
     <script src="assets/zepto/zepto.min.js"></script>
+    <script type="text/javascript" src="assets/artTemplate/template-native.js"></script>
     <script src="js/category.js"></script>
 </head>
 
@@ -43,30 +44,7 @@
             <div class="mui-scroll-wrapper">
                 <div class="mui-scroll">
                     <div class="links" id="links">
-                        <a class="active" href="" title="">运动馆</a>
-                        <a href="" title="">运动馆</a>
-                        <a href="" title="">运动馆</a>
-                        <a href="" title="">运动馆</a>
-                        <a href="" title="">运动馆</a>
-                        <a href="" title="">运动馆</a>
-                        <a href="" title="">运动馆</a>
-                        <a href="" title="">运动馆</a>
-                        <a href="" title="">运动馆</a>
-                        <a href="" title="">运动馆</a>
-                        <a href="" title="">运动馆</a>
-                        <a href="" title="">运动馆</a>
-                        <a href="" title="">运动馆</a>
-                        <a href="" title="">运动馆</a>
-                        <a href="" title="">运动馆</a>
-                        <a href="" title="">运动馆</a>
-                        <a href="" title="">运动馆</a>
-                        <a href="" title="">运动馆</a>
-                        <a href="" title="">运动馆</a>
-                        <a href="" title="">运动馆</a>
-                        <a href="" title="">运动馆</a>
-                        <a href="" title="">运动馆</a>
-                        <a href="" title="">运动馆</a>
-                        <a href="" title="">运动馆</a>
+                        
                     </div>
                 </div>
             </div>
@@ -74,10 +52,46 @@
         <div class="category-right">
             <div class="mui-scroll-wrapper">
                 <div class="mui-scroll">
+                    <ul class="brand-list mui-clearfix">
+                        <li>
+                            <a href="#">
+                                <img src="images/brand1.png" alt="">
+                                <p>耐克</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/brand2.png" alt="">
+                                <p>耐克</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/brand3.png" alt="">
+                                <p>耐克</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/brand4.png" alt="">
+                                <p>耐克</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/brand5.png" alt="">
+                                <p>耐克</p>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
+    <script type="text/template" id="category-first">
+    	<% for(var i = 0; i < result.length; i++){ %>
+    		<a href="" title=""><%=result[i]['categoryName']%></a>
+    	<% } %>
+    </script>
 </body>
-
 </html>

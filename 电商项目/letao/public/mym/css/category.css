@@ -10,13 +10,14 @@
 .my-content .category-right {
 	height: 100%;
 	position: relative;
-	background: #fff;
 }
 .my-content .category-left {
 	width: 80px;
 	float: left;
 }
-.my-content .category-left .links {}
+.my-content .category-left .links {
+	background: #FFF;
+}
 .my-content .category-left .links a {
 	display: block;
 	height: 45px;
@@ -32,4 +33,22 @@
 }
 .my-content .category-right {
 	margin-left: 90px;
+}
+.my-content .category-right .brand-list {
+	margin-top: 10px;
+	background: #FFF;
+}
+.my-content .category-right .brand-list li {
+	float: left;
+	width: 33.3333%;
+}
+.my-content .category-right .brand-list li a{
+	display: block;
+}
+.my-content .category-right .brand-list li a img{
+	display: block;
+	width: 100%;
+}
+.my-content .category-right .brand-list li a p{
+	text-align: center;
 }

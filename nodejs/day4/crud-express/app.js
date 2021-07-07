@@ -26,3 +26,5 @@ app.use(router)
 app.listen(3000, function() {
     console.log('server 3000 is running')
 })
+
+module.exports = app

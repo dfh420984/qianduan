@@ -29,11 +29,25 @@ var fs = require('fs')
 // }
 
 var express = require('express')
+var Student = require('./student')
 //1.创建路由容器
 var router = express.Router()
 //2.挂载路由进入容器
 router.get('/students', function(req, res) {
-    fs.readFile('./db.json', 'utf8', function(err, data) {
+    // fs.readFile('./db.json', 'utf8', function(err, data) {
+    //     if (err) {
+    //         return res.status(500).send('server error')
+    //     }
+    //     res.render('index.html', {
+    //         fruits: [
+    //             '香蕉',
+    //             '苹果',
+    //             '梨子'
+    //         ],
+    //         students: JSON.parse(data).students
+    //     })
+    // })
+    Student.find(function(err, students) {
         if (err) {
             return res.status(500).send('server error')
         }
@@ -43,7 +57,7 @@ router.get('/students', function(req, res) {
                 '苹果',
                 '梨子'
             ],
-            students: JSON.parse(data).students
+            students: students
         })
     })
 })
@@ -53,19 +67,42 @@ router.get('/students/new', function(req, res) {
 })
 
 router.post('/students/new', function(req, res) {
-    console.log(req.body)
+    var student = req.body
+    Student.save(student, function(err) {
+        if (err) {
+            return res.status(500).send('server error')
+        }
+        res.redirect('/students')
+    })
 })
 
 router.get('/students/edit', function(req, res) {
-
+    Student.findById(parseInt(req.query.id), function(err, student){
+        if (err) {
+            return res.status(500).send('server error')
+        }
+        res.render('edit.html', {
+            student: student
+        })
+    }) 
 })
 
 router.post('/students/edit', function(req, res) {
-
+    Student.updateById(req.body, function(err){
+        if (err) {
+            return res.status(500).send('server error')
+        }
+        res.redirect('/students')
+    })
 })
 
 router.get('/students/delete', function(req, res) {
-
+    Student.deleteById(req.query.id, function(err){
+        if (err) {
+            return res.status(500).send('server error')
+        }
+        res.redirect('/students')
+    })
 })
 
 //3.把router导出

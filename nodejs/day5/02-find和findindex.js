@@ -36,10 +36,10 @@ Array.prototype.myFind = function(callback) {
   }
 }
 
-//找指定索引
-var index = 3;
+//找指定id
+var id = 3;
 var ret = users.myFind(function(item, i){
-  return item.id === index
+  return item.id === id
 })
 
 console.log(ret)

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style type="text/css">
+		[v-cloak] {
+			display: none;
+		}
+	</style>
+	<script type="text/javascript" src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+	<div id="app">
+		<input type="button" value="浪起来" name="" @click="lang">
+		<input type="button" value="低调" name="" @click="stop">
+		<h4 v-cloak>{{msg}}</h4>
+	</div>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el: '#app',
+			data: {
+				msg: '猥琐发育，别浪～～！',
+				intervalId: null
+			},
+			methods: {
+				lang() {
+					if (this.intervalId != null) return
+					this.intervalId = setInterval(() => {
+						console.log(this.msg)
+						var start = this.msg.substring(0, 1)
+						var end = this.msg.substring(1)
+						this.msg = end + start
+					}, 400)
+				},
+				stop() {
+					clearInterval(this.intervalId)
+					this.intervalId = null
+				}
+			}
+		})
+	</script>
+</body>
+</html>

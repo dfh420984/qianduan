@@ -44,7 +44,7 @@
                 <tr v-for="item in search(keywords)" :key="item.id">
                     <td>{{ item.id }}</td>
                     <td>{{ item.name }}</td>
-                    <td>{{ item.ctime }}</td>
+                    <td>{{ item.ctime | dateFormat }}</td>
                     <td>
 			            <a href="" @click.prevent="del(item.id)">删除</a>
 			        </td>

@@ -70,9 +70,9 @@
       if (pattern.toLowerCase() === 'yyyy-mm-dd') {
         return `${y}-${m}-${d}`
       } else {
-        var hh = dt.getHours()
-        var mm = dt.getMinutes()
-        var ss = dt.getSeconds()
+        var hh = dt.getHours() < 10 ? '0'+dt.getHours() : dt.getHours()
+        var mm = dt.getMinutes() < 10 ? '0'+dt.getMinutes() : dt.getMinutes()
+        var ss = dt.getSeconds() < 10 ? '0'+dt.getSeconds() : dt.getSeconds()
 
         return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
       }

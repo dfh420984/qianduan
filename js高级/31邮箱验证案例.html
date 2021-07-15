@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	请输入邮箱:<input type="text" name="" value="" id="email">
+</body>
+</html>
+<script type="text/javascript">
+	var email = document.getElementById("email");
+	email.onblur = function() {
+		var reg = /^[0-9a-zA-Z_.-]+[@][0-9a-zA-Z_.-]+(.[a-zA-Z]+){1,2}$/;
+		if (reg.test(this.value)) {
+			this.style.backgroundColor = 'green';
+		} else {
+			this.style.backgroundColor = 'red';
+		}
+	}
+
+	email.onfocus = function() {
+		this.style.backgroundColor = '';
+	}
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	function Person(name, age, sex) {
+		this.name = name;
+		this.age = age;
+		this.sex = sex;
+	}
+	per1 = new Person("小明", 20, "男");
+	per2 = new Person("小方", 18, "女");
+	//给对象共享方法，节省内存
+	Person.prototype.eat = function() { //给构造函数添加eat方法，给对象共享
+		console.log("吃饭");
+	}
+	console.dir(per1);
+	console.dir(per2);
+	console.dir(Person);
+	console.log(per1 == per2);
+	console.log(per1.eat == per2.eat);
+
+	/**
+	*原型:实例对象中有__proto__这个属性，叫原型，也是一个对象,这个属性是给浏览器使用的，不是标准属性，可以叫原型对象
+	*构造函数有prototype这个属性，叫原型，也是一个对象，这个属性是给程序员使用的，这是标准属性，可以叫原型对象
+	*实例对象__proto__和构造函数prototype相同，都是指向prototype原型对象
+	**/
+	per1.__proto__.eat()
+	console.log(per1.__proto__ == Person.prototype)。//true
+</script>

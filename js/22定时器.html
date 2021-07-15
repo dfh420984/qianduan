@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#dv {
+			width: 200px;
+			height: 200px;
+			position: absolute;
+		}
+		img {
+			width: 100px;
+			height: auto;
+			float: left;
+		}
+	</style>
+</head>	
+<body>
+	<input type="button" name="" value="开始" id="start">
+	<input type="button" name="" value="停止" id="stop">
+	<div id="dv">
+		<img src="images/1.jpg" alt="">
+		<img src="images/2.jpg" alt="">
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	var id = 0;
+	document.getElementById("start").onclick = function() {
+		id = window.setInterval(function(){
+			var dv = document.getElementById("dv");
+			var x = parseInt(Math.random()*100 + 1);
+			var y = parseInt(Math.random()*100 + 1);
+			dv.style.left = x + "px";
+			dv.style.top = y + "px";
+		}, 1000);
+	}
+
+	document.getElementById("stop").onclick = function() {
+		window.setTimeout(function(){
+			window.clearInterval(id);
+		}, 2000)
+	}
+	
+	
+</script>

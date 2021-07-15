@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	function getType(type) {
+		return function(obj) {
+			return Object.prototype.toString.call(obj) === type;
+		}
+	}
+	console.log(Object.prototype.toString());
+	console.log(Object.prototype.toString.call([10, 20]));
+	console.log(Object.prototype.toString.call(new Date()));
+	var f1 = getType("[object Array]");
+
+	console.log(f1([10, 20]));
+</script>

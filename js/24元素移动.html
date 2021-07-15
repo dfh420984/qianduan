@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		div {
+			width: 200px;
+			height: 200px;
+			background-color: green;
+			margin-top: 50px;
+			position: absolute;
+			left: 0;
+		}
+	</style>
+<body>
+	<input type="button" name="" id="btn1" value="移动到400">
+	<input type="button" name="" id="btn2" value="移动到800">
+	<div id="dv">
+		
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	var btn1 = document.getElementById("btn1");
+	var btn2 = document.getElementById("btn2");
+	var dv = document.getElementById("dv");
+	btn1.onclick = function() {
+		//animate(dv, 400);
+		animateDiff(dv, 400);
+	}
+
+	btn2.onclick = function() {
+		//animate(dv, 800);
+		animateDiff(dv, 800);
+	}
+
+	//动画函数(固定步数)
+	function animate(element, target) {
+		window.clearInterval(element.timeId);
+		element.timeId = window.setInterval(function(){
+			//移动开始位置
+			var current = element.offsetLeft;
+			//移动步数
+			var step = 10;
+			step = current < target ? step : -step;
+			//移动目标位置
+			current += step;
+			//判断当前位置是否移动到了目标位置
+			if (Math.abs(target-current) > Math.abs(step)) {
+				element.style.left = current+"px";
+			} else {
+				window.clearInterval(element.timeId);
+				timeId = "";
+			}
+		}, 20);
+	}
+
+	//变数函数(不固定步数)
+	function animateDiff(element, target) {
+		window.clearInterval(element.timeId);
+		element.timeId = window.setInterval(function(){
+			//移动开始位置
+			var current = element.offsetLeft;
+			//移动步数
+			var step = (target - current) / 10;
+			step = step > 0 ? Math.ceil(step) : Math.floor(step);
+			//移动目标位置
+			current += step;
+			element.style.left = current+"px";
+			//判断当前位置是否移动到了目标位置
+			if (current == target) {
+				window.clearInterval(element.timeId);
+			}
+		}, 20);
+	}
+</script>

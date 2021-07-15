@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		li {
+			list-style: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="dv">
+		
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	var names = ["杨过", "小龙女", "郭芙"];
+	var dv = document.getElementById("dv");
+	var str = "<ul>";
+	for (var i in names) {
+		str += "<li>"+names[i]+"</li>";
+	}
+	str += "</ul>";
+	dv.innerHTML = str;
+	var liobj = document.getElementsByTagName("li");
+	console.log(liobj);
+	for (var i = 0; i < liobj.length; i++) {
+		liobj[i].onmouseover = function() {
+			this.style.backgroundColor = 'yellow';
+		}
+		liobj[i].onmouseout = function() {
+			this.style.backgroundColor = '';
+		}
+	}
+</script>

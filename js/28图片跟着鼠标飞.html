@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		img {
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+
+		.img1 {
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+	<img class="img1" src="images/bird.png" alt="">
+</body>
+</html>
+<script type="text/javascript">
+	//鼠标移动事件
+	document.onmousemove = function(e) {
+		//clientX, clientY屏幕可视区域内鼠标横纵坐标
+		var img = document.getElementsByTagName("img")[0];
+		//第一种样式
+		// img.style.left = e.clientX+"px";
+		// img.style.top = e.clientY+"px";
+		
+		//第二种种样式
+		// img.style.setProperty("left", e.clientX+"px");
+		// img.style.setProperty("top", e.clientY+"px");
+
+		//第三种种样式
+		// img.style.cssText = "left: "+e.clientX+"px"+";top: "+e.clientY+"px";
+	}
+</script>

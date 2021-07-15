@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <script>
+
+    /*
+    *
+    * 今天所有的案例都是三遍
+    * 事件绑定是事件解绑的两个兼容代码的函数各三遍
+    *
+    *
+    * */
+
+
+    //事件绑定是事件解绑的两个兼容代码的函数各三遍
+    function addEventListener(element,type,fn) {
+      if(element.addEventListener){
+        element.addEventListener(type,fn,false);
+      }else if(element.attachEvent){
+        element.attachEvent("on"+type,fn);
+      }else{
+        element["on"+type]=fn;
+      }
+    }
+    function removeEventListener(element,type,fn) {
+      if(element.removeEventListener){
+        element.removeEventListener(type,fn,false);
+      }else if(element.detachEvent){
+        element.detachEvent("on"+type,fn);
+      }else{
+        element["on"+type]=null;
+      }
+    }
+  </script>
+</head>
+<body>
+
+
+</body>
+</html>

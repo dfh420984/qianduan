@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	div {
+		width: 200px;
+		height: 200px;
+		background-color: yellow;
+	}
+</style>
+<script type="text/javascript" src="./common.js"></script>
+<body>
+	<input type="button" name="" value="提交" id="btn">
+	<div id="dv">
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+
+	function ChangeStyle(obj1, obj2, json) {
+		this.obj1 = obj1;
+		this.obj2 = obj2;
+		this.json = json;
+	}
+
+	ChangeStyle.prototype.init = function() {
+		var that = this;
+		this.obj1.onclick = function() {
+			for (var k in that.json) {
+				that.obj2.style[k] = that.json[k];
+			}
+		}
+	}
+
+	var obj1 = my$("btn");
+	var obj2 = my$("dv");
+	var json = {"width": "400px", "height": "400px", "backgroundColor": "red"};
+	var cs = new ChangeStyle(obj1, obj2, json);
+	cs.init();
+</script>

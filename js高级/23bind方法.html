@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	// function f1(x, y) {
+	// 	console.log((x+y)+"==="+this);
+	// }
+
+	// //call和apply调用的时候改变this指向，bind方法先复制，复制一份的时候改变this指向
+	// var ff = f1.bind(null,10,20);
+	// ff();
+
+	// function Person(age) {
+	// 	this.age = age;
+	// }
+
+	// Person.prototype.getAge = function() {
+	// 	console.log(this.age);
+	// }
+
+	// function Student(age) {
+	// 	this.age = age;
+	// }
+
+	// var per = new Person(10);
+	// var stu = new Student(20);
+	// var f = per.getAge.bind(stu);
+	// f();
+
+	function ShowRandom() {
+		this.num = parseInt(Math.random()*10+1);
+	}
+	ShowRandom.prototype.show1 = function() {
+		window.setInterval(this.show2.bind(this), 1000);
+	}
+	ShowRandom.prototype.show2 = function() {
+		console.log(this.num);
+	}
+	var s = new ShowRandom();
+	s.show1();
+</script>

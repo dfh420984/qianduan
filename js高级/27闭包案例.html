@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	//闭包缓存数据，延长作用域
+	function f1() {
+		var num = 10;
+		return function() {
+			num++;
+			return num;
+		}
+	}
+	var ff = f1();
+	console.log(ff());
+	console.log(ff());
+	console.log(ff());
+</script>

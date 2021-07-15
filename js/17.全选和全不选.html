@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>
+					<input type="checkbox" name="" id = "all">
+				</th>
+				<th>菜名</th>
+				<th>饭店</th>
+			</tr>
+		</thead>
+		<tbody id="jtb">
+			<tr>
+				<td><input type="checkbox" name=""></td>
+				<td>红烧肉</td>
+				<td>田老师</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name=""></td>
+				<td>狮子头</td>
+				<td>田老师</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name=""></td>
+				<td>鱼香肉丝</td>
+				<td>田老师</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
+<script type="text/javascript">
+	var obj = document.getElementById("all");
+	var obj2 = document.getElementById("jtb").getElementsByTagName("input");
+	obj.onclick = function() {
+		for (var i = 0; i < obj2.length; i++) {
+			console.log(obj2[i].checked);
+			obj2[i].checked = this.checked;
+		}
+	}
+
+	for (var i = 0; i < obj2.length; i++) {
+		obj2[i].onclick = function() {
+			var flag = true;
+			for (var j= 0; j < obj2.length; j++) {
+				if (!obj2[j].checked) {
+					flag = false;
+					break;
+				}
+			}
+			obj.checked = flag;
+		}
+	}
+</script>

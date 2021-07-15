@@ -8,25 +8,38 @@
 // 如果遍历结束还没有符合该条件的元素，则返回 undefined
 
 var users = [
-  {id: 1, name: '张三'},
-  {id: 2, name: '张三'},
-  {id: 3, name: '张三'},
-  {id: 4, name: '张三'}
+  {id: 1, name: '张1'},
+  {id: 2, name: '张2'},
+  {id: 3, name: '张3'},
+  {id: 4, name: '张4'}
 ]
 
-Array.prototype.myFind = function (conditionFunc) {
-  // var conditionFunc = function (item, index) { return item.id === 4 }
+// Array.prototype.myFind = function (conditionFunc) {
+//   // var conditionFunc = function (item, index) { return item.id === 4 }
+//   for (var i = 0; i < this.length; i++) {
+//     if (conditionFunc(this[i], i)) {
+//       return this[i]
+//     }
+//   }
+// }
+
+// var ret = users.myFind(function (item, index) {
+//   return item.id === 2
+// })
+
+// console.log(ret)
+Array.prototype.myFind = function(callback) {
   for (var i = 0; i < this.length; i++) {
-    if (conditionFunc(this[i], i)) {
+    if (callback(this[i], i)) {
       return this[i]
     }
   }
 }
 
-var ret = users.myFind(function (item, index) {
-  return item.id === 2
+//找指定索引
+var index = 3;
+var ret = users.myFind(function(item, i){
+  return item.id === index
 })
 
 console.log(ret)
-
-

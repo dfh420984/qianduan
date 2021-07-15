@@ -18,7 +18,12 @@
   <script>
     // 注意:不论是哪种方式创建出来的组件,组件的 template 属性指向的模板内容,必须有且只能有唯一的一个根元素
     Vue.component('mycom2', {
-      template: '<div><h3>这是直接使用 Vue.component 创建出来的组件</h3><span>123</span></div>'
+      data: function() {
+        return {
+          count: 457
+        }
+      },
+      template: '<div><h3>这是直接使用 Vue.component 创建出来的组件</h3><span>{{ count }}</span></div>'
     })
 
     // 创建 Vue 实例，得到 ViewModel

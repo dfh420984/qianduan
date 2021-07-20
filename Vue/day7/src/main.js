@@ -6,6 +6,7 @@ Vue.use(VueRouter)
 
 // 导入bootstrap样式
 import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-icons/font/bootstrap-icons.css'
 import './css/app.css'
 
 // 导入 MUI 的样式表， 和 Bootstrap 用法没有差别

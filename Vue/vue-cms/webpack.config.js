@@ -36,7 +36,7 @@ module.exports = {
             loader: 'url-loader',
             // loader: 'file-loader',
             options: {
-                esModule: false, // 这里设置为false
+                esModule: false, // 这里设置为false,4.x版本file-loader会将src url属性图片打包成object无法显示
                 name: '[name].[ext]',
                 limit: 10240
             }

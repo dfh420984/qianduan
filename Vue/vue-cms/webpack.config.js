@@ -32,7 +32,15 @@ module.exports = {
       },
       { 
       	test: /\.(jpg|png|gif|bmp|jpeg)$/, 
-      	use: 'url-loader?limit=7631&name=[hash:8]-[name].[ext]' 
+      	use: [{
+            loader: 'url-loader',
+            // loader: 'file-loader',
+            options: {
+                esModule: false, // 这里设置为false
+                name: '[name].[ext]',
+                limit: 10240
+            }
+        }]
       }, // 处理 图片路径的 loader
       // limit 给定的值，是图片的大小，单位是 byte， 如果我们引用的 图片，大于或等于给定的 limit值，则不会被转为base64格式的字符串， 如果 图片小于给定的 limit 值，则会被转为 base64的字符串
       { 
@@ -45,7 +53,13 @@ module.exports = {
       }, // 配置 Babel 来转换高级的ES语法
       {
         test: /\.vue$/, 
-        use: 'vue-loader'
+        use: [{
+            loader: 'url-loader',
+            // loader: 'file-loader',
+            options: {
+                esModule: false
+            }
+        }]
       }, //处理.vue文件 
     ],
   },

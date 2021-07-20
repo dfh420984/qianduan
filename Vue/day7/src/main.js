@@ -4,10 +4,23 @@ import VueRouter from 'vue-router'
 // 2. 手动安装 VueRouter 
 Vue.use(VueRouter)
 
-import MintUI from 'mint-ui'
-//可以省略node_modules目录
-import 'mint-ui/lib/style.css'
-Vue.use(MintUI)
+// 导入bootstrap样式
+import 'bootstrap/dist/css/bootstrap.css'
+import './css/app.css'
+
+// 导入 MUI 的样式表， 和 Bootstrap 用法没有差别
+import './lib/mui/css/mui.min.css'
+
+// import MintUI from 'mint-ui'
+// //可以省略node_modules目录
+// import 'mint-ui/lib/style.css'
+// Vue.use(MintUI)
+
+ 
+import { Button } from 'mint-ui'
+Vue.component(Button.name, Button)
+console.log(Button.name)
+//Vue.use(Button)
 
 //导入App.vue组件
 import app from './App.vue'

@@ -53,13 +53,7 @@ module.exports = {
       }, // 配置 Babel 来转换高级的ES语法
       {
         test: /\.vue$/, 
-        use: [{
-            loader: 'url-loader',
-            // loader: 'file-loader',
-            options: {
-                esModule: false
-            }
-        }]
+        use: 'vue-loader'
       }, //处理.vue文件 
     ],
   },

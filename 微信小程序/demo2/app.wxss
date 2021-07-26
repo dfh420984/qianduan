@@ -1,0 +1,28 @@
+/* page {
+  background-color: #ccc;
+} */
+.mt20 {
+  margin-top: 20rpx;
+}
+.bgw {
+  background-color: #fff;
+}
+/* 样式封装，分割线 */
+.divider {
+  height: 20rpx;
+  background-color: #f1f1f1;
+  box-shadow: 0 10rpx 10rpx rgba(0, 0, 0, 0.1) inset;
+}
+/* 细边框 */
+.bdr {
+  position: relative;
+}
+.bdr::after {
+  content: "";
+  width: 1rpx;
+  background-color: #ccc;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}

@@ -4,6 +4,7 @@
     "pages/message/message",
     "pages/index/index",
     "pages/contact/contact",
+    "pages/shopList/shopList",
     "pages/logs/logs"
   ],
   "window":{

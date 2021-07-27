@@ -17,7 +17,7 @@
 </view>
 <!-- 导航分区 -->
 <view class="index-nav">
-  <navigator class="nav-item bdr">
+  <navigator class="nav-item bdr" url="/pages/shopList/shopList">
     <image src="/assets/icons/grid-01.png"></image>
     <text>美食</text>
   </navigator>

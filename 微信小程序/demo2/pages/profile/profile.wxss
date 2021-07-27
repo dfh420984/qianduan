@@ -9,3 +9,6 @@
   border: 10rpx solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
 }
+page{
+  background-color: #f1f1f1;
+}

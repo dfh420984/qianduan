@@ -26,3 +26,23 @@
   top: 0;
   right: 0;
 }
+/* 箭头样式 */
+.arrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.arrow::after {
+  content: "";
+  width: 20rpx;
+  height: 20rpx;
+  border-top: 3rpx solid #ccc;
+  border-right: 3rpx solid #ccc;
+  transform: rotate(45deg);
+}
+/* flex居中 */
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

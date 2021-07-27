@@ -1,0 +1,21 @@
+<view class="card">
+  <text class="card-title">标题1111</text>
+  <text class="card-date">2021-07-27</text>
+  <image class="card-image" src="//m.360buyimg.com/mobilecms/s700x280_jfs/t1/187651/2/15138/78826/60fea10aEb3131376/81e88fcfe22178e6.jpg!cr_1125x449_0_166!q70.jpg.dpg" mode="aspectFill"></image>
+  <text class="card-desc">越努力,越幸运</text>
+  <text class="card-read arrow">查看详情</text>
+</view>
+<view class="card">
+  <text class="card-title">标题1111</text>
+  <text class="card-date">2021-07-27</text>
+  <image class="card-image" src="//m.360buyimg.com/mobilecms/s700x280_jfs/t1/187651/2/15138/78826/60fea10aEb3131376/81e88fcfe22178e6.jpg!cr_1125x449_0_166!q70.jpg.dpg" mode="aspectFill"></image>
+  <text class="card-desc">越努力,越幸运</text>
+  <text class="card-read arrow">查看详情</text>
+</view>
+<view class="card">
+  <text class="card-title">标题1111</text>
+  <text class="card-date">2021-07-27</text>
+  <image class="card-image" src="//m.360buyimg.com/mobilecms/s700x280_jfs/t1/187651/2/15138/78826/60fea10aEb3131376/81e88fcfe22178e6.jpg!cr_1125x449_0_166!q70.jpg.dpg" mode="aspectFill"></image>
+  <text class="card-desc">越努力,越幸运</text>
+  <text class="card-read arrow">查看详情</text>
+</view>

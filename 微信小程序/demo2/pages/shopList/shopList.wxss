@@ -24,9 +24,10 @@ page{
   position: absolute;
   right: 20rpx;
   top: 20rpx;
-  color: #e2e2e2;
 }
+
 .shop-title {
+  width: 380rpx;
   font-size: 16px;
   color: #333;
 }

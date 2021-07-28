@@ -55,3 +55,21 @@ page {
   border-bottom: 1px solid #ddd;
   padding: 20rpx 30rpx;
 }
+/* 星星样式 */
+.star-after {
+  color: #e2e2e2;
+}
+.star-before {
+  color: #f19e38;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 80%;
+  overflow: hidden;
+}
+/* 省略号 */
+.ell {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

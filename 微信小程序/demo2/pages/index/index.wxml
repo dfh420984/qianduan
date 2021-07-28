@@ -13,6 +13,9 @@
         <swiper-item>
             <image src="https://m.360buyimg.com/mobilecms/s1125x549_jfs/t14776/179/342502886/126892/bc618b9e/5a2a317dN2c57e7b0.jpg!q70.jpg" width="375" height="150" mode="aspectFill" />
         </swiper-item>
+        <!-- <swiper-item wx:for="{{ sliderList }}" wx:key="id" >
+            <image src="{{ item.image }}" width="375" height="150"  mode="aspectFill" lazy-load />
+        </swiper-item> -->
     </swiper>
 </view>
 <!-- 导航分区 -->
@@ -55,6 +58,13 @@
   </navigator>
 </view>
 <view class="divider"></view>
+<!-- <view class='index-nav bgw'>
+    <navigator wx:for="{{ navList }}" wx:key="id" class='nav-item bdr' url='/pages/shopList/shopList?cat={{ item.id }}'>
+        <image src='{{ item.icon }}' lazy-load></image>
+        <text>{{ item.name }}</text>
+    </navigator>
+</view>
+<view class='divider'></view> -->
 <!-- 首页入口分区 -->
 <view class="index-enter mt20 bgw">
   <navigator class="enter-item">

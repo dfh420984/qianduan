@@ -1,0 +1,15 @@
+<view class="divider"></view>
+<view class="cell">
+  <navigator class="cell-item arrow">
+    <text>个人资料</text>
+  </navigator>
+  <navigator class="cell-item arrow">
+    <text>清楚缓存</text>
+  </navigator>
+  <navigator class="cell-item arrow">
+    <text>版本信息</text>
+  </navigator>
+  <navigator class="cell-item arrow">
+    <text>关于我们</text>
+  </navigator>
+</view>
